@@ -1,0 +1,28 @@
+{
+  "name": "placemark-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3003",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "svelte": "^3.44.0",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "axios": "^0.27.2",
+    "carbon-components-svelte": "^0.64.3",
+    "fontawesome-svelte": "^2.0.1",
+    "leaflet": "^1.8.0",
+    "sirv-cli": "^1.0.0",
+    "svelte-frappe-charts": "^1.9.2",
+    "svelte-gallery": "^1.3.5",
+    "svelte-select": "^3.17.0",
+    "svelte-spa-router": "^3.2.0"
+  }
+}
