@@ -1,6 +1,6 @@
 <script>
   import {getContext, onMount} from 'svelte'
-  import Menu from "../components/menu.svelte"
+  import Menu from "../components/Menu.svelte"
   import {user} from "../stores";
   import {push} from "svelte-spa-router";
 
