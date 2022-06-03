@@ -1,7 +1,7 @@
 <script>
   import ListPlacemarks from "../components/ListPlacemarks.svelte"
   import AddPlacemark from "../components/AddPlacemark.svelte"
-  import Menu from "../components/menu.svelte"
+  import Menu from "../components/Menu.svelte"
   import PlacemarkMap from "../components/PlacemarkMap.svelte";
 
   let placemarkMap = null;

@@ -1,6 +1,6 @@
 <script>
   // @ts-nocheck
-    import Menu from "../components/menu.svelte";
+    import Menu from "../components/Menu.svelte";
     import CategoryAnalytics from "../components/CategoryAnalytics.svelte"
     import CreateDataAnalysis from "../components/CreateDataAnalytics.svelte"
     import {onMount} from 'svelte'
