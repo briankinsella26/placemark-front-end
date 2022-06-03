@@ -2,7 +2,7 @@
   import PlacemarkEditor from "../../components/PlacemarkEditor.svelte"
   import PlacemarkImageUpload from "../../components/PlacemarkImageUpload.svelte"
   import {getContext, onMount} from 'svelte'
-  import Menu from "../../components/menu.svelte"
+  import Menu from "../../components/Menu.svelte"
   import MenuAdmin from "../../components/MenuAdmin.svelte"
   import { user } from '../../stores'
 
