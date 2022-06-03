@@ -14,7 +14,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <a href="/#/dashboard" id="dashboard" class="button"> Dashboard </a> 
-          <a href="/#/map" id="map" class="button"> Map </a>
+          <a href="/#/maps" id="maps" class="button"> Maps </a>
           <a href="/#/charts" id="charts" class="button"> Charts </a> 
           <a href="/#/about" id="about" class="button"> About </a> 
           <a href="/#/profile" id="profile" class="button"> Profile </a>

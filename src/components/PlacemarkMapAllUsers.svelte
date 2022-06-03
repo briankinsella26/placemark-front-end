@@ -15,14 +15,14 @@
 
   onMount(async () => {
     categoryList.subscribe(categoryList => {categories = categoryList})
-    map = new LeafletMap("placemark-map", mapConfig);
+    map = new LeafletMap("placemark-map-all", mapConfig);
     categories.forEach(category => {
       if(category.value != "All") {
         map.addLayerGroup(category.value)
       }
     })
 
-    let placemarks = await placemarkService.getUserPlacemarks();
+    let placemarks = await placemarkService.getAllPlacemarks();
     placemarks.forEach(placemark => {
       addPlacemarkMarker(placemark);
     });
@@ -40,4 +40,4 @@
   }
 </script>
 
-<div class="box" id="placemark-map" style="height:800px"></div>
+<div class="box" id="placemark-map-all" style="height:800px"></div>

@@ -14,11 +14,12 @@
   import {PlacemarkService} from "./services/PlacemarkService"
   import {setContext} from "svelte";
   import {getContext} from "svelte";
-  import Map from "./pages/Map.svelte"
+  import Maps from "./pages/Maps.svelte"
 
   import Charts from "./pages/Charts.svelte";
 
-  setContext("PlacemarkService", new PlacemarkService("https://mysterious-harbor-74880.herokuapp.com"))
+  // setContext("PlacemarkService", new PlacemarkService("https://mysterious-harbor-74880.herokuapp.com"))
+  setContext("PlacemarkService", new PlacemarkService("http://localhost:3000"))
   const placemarkService = getContext("PlacemarkService")
 
   let routes = {
@@ -36,7 +37,7 @@
     "/admin/users": Users,
     "/admin/placemarks": AdminPlacemarks,
     "/charts": Charts,
-    "/map": Map,
+    "/maps": Maps,
   }
 
 </script>
