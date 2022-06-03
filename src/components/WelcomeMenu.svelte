@@ -2,7 +2,7 @@
   import PlacemarkBrand from "../components/PlacemarkBrand.svelte"
 </script>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" aria-label="main navigation">
   <div class="navbar-brand">
     <PlacemarkBrand/>
   </div>
