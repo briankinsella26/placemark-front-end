@@ -86,6 +86,15 @@ export class PlacemarkService {
     }
   }
 
+  async getAllPlacemarks() {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/placemark");
+      return response.data;
+    } catch (error) {
+      return false;
+    }
+  }
+
   async getUserDetails(userId) {
     try {
       const response = await axios.get(this.baseUrl + "/api/users/" + userId);
