@@ -1,5 +1,5 @@
 <script>
-  import Menu from "../components/menu.svelte";
+  import Menu from "../components/Menu.svelte";
   import PlacemarkMap from "../components/PlacemarkMap.svelte";
 </script>
 

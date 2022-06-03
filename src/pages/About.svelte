@@ -1,6 +1,6 @@
 <script>
   import {getContext} from 'svelte'
-  import Menu from "../components/menu.svelte"
+  import Menu from "../components/Menu.svelte"
   const placemarkService = getContext("PlacemarkService");
   
 </script>
