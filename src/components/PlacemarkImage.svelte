@@ -9,13 +9,6 @@
 
   const placemarkService = getContext("PlacemarkService")
 
-  let email = ""
-  let password = "";
-  let errorMessage = "";
-  let userScope;
-  let userDetails;
-  let image;
-
   async function deleteImage(imageId) {
     placemarkService.deleteImage(placemark._id, imageId);
   }

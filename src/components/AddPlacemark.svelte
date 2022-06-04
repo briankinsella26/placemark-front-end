@@ -1,6 +1,8 @@
 <script>
   import {getContext, onMount, createEventDispatcher} from 'svelte'
   import {user} from "../stores";
+  import {push} from "svelte-spa-router";
+  import ListPlacemarks from "../components/ListPlacemarks.svelte"
 
   const placemarkService = getContext("PlacemarkService");
   const dispatch = createEventDispatcher();
@@ -11,6 +13,7 @@
   let category;
   let latitude;
   let longitude;
+  let formEl;
   
   let errorMessage = "";
 
@@ -20,7 +23,8 @@
 
 
   async function addPlacemark() {
-    const newPlacemark = {
+    let newPlacemark;
+    newPlacemark = {
         userid: userId,
         name: name,
         description: description,
@@ -34,13 +38,18 @@
       errorMessage = "Error adding new placemark";
       return;
     }
+
     dispatch("message", {
         placemark: newPlacemark,
       });
+    }
+
+    export function reset() {
+      formEl.reset();
   }
 </script>
 
-<form on:submit|preventDefault={addPlacemark}>
+<form on:submit|preventDefault={addPlacemark} bind:this={formEl}>
   <!-- svelte-ignore a11y-label-has-associated-control -->
   <label>Enter Placemark Details:</label>
   <div class="field is-horizontal">

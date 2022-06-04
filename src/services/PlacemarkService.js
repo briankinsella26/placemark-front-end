@@ -150,8 +150,10 @@ export class PlacemarkService {
 
   async addPlacemark(placemark) {
     try {
+      console.log(placemark);
       const response = await axios.post(this.baseUrl + "/api/placemark", { placemark });
-      if (response.data.success) {
+      console.log(response);
+      if (response.status == 201) {
         return true;
       }
       return false;
@@ -178,9 +180,11 @@ export class PlacemarkService {
     }
   }
 
-  async uploadImage(placemarkId, image) {
+  async uploadImage(placemarkId, fileList) {
+    console.log(placemarkId)
+    console.log(fileList)
     try {
-      const response = await axios.post(`${this.baseUrl}/api/placemark/${placemarkId}/upload`, { image });
+      const response = await axios.post(`${this.baseUrl}/api/placemark/${placemarkId}/upload`, { fileList });
       if (response.status == 200) {
         return true;
       }
@@ -189,6 +193,18 @@ export class PlacemarkService {
       return false;
     }
   }
+
+  async uploadImageV2(placemarkId, imgBase64) {
+    const data = {}
+    const imgData = imgBase64.split(',');
+    data["image"] = imgData[1];
+    let body = JSON.stringify(data)
+    console.log(placemarkId);
+    console.log(body);
+    await axios.post(`${this.baseUrl}/api/placemark/${placemarkId}/upload`, { body }, 
+      {headers: {'Content-Type': 'application/json', Accept: 'application/json'}});
+  }
+  
 
   async deleteImage(placemarkId, imageId) {
     try {
