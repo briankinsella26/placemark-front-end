@@ -18,6 +18,12 @@
   async function filter() {
     placemarkList = await placemarkService.getUserPlacemarks(userId, selected);
   }
+
+  export async function placemarkAdded(newPlacemark) {
+    placemarkList.push(newPlacemark);
+    placemarkList = [...placemarkList];
+    newPlacemark = ""
+  }
 </script>
 
 <section>
