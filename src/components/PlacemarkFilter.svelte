@@ -10,7 +10,6 @@
   });
 
   function filter() {
-    console.log(selected)
     // "dashboard/filter?category=Hiking"
   }
 

@@ -150,9 +150,8 @@ export class PlacemarkService {
 
   async addPlacemark(placemark) {
     try {
-      console.log(placemark);
       const response = await axios.post(this.baseUrl + "/api/placemark", { placemark });
-      console.log(response);
+
       if (response.status == 201) {
         return true;
       }
