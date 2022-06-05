@@ -5,16 +5,19 @@
   import Menu from "../../components/Menu.svelte"
   import MenuAdmin from "../../components/MenuAdmin.svelte"
   import { user } from '../../stores'
+  import ImageCarousel from "../../components/ImageCarousel.svelte"
 
   export let params = {}  
   let placemark = {};
   const placemarkService = getContext("PlacemarkService");
   let userScope = [];
+  let placemarkImages = [];
 
   onMount(async () => {
     let id = params.id
     placemark = await placemarkService.getPlacemarkById(id);
     placemark = placemark.data;
+    placemarkImages = placemark.img
     user.subscribe(user => {userScope = user.scope});
   });
 </script>
@@ -28,7 +31,6 @@
   <br>
   <br>
   <br>
-  <div>
-    <PlacemarkImageUpload {placemark} />
-  </div>
+  <ImageCarousel bind:placemarkImages imageHeight={200} deleteOption={true}/>
+  <PlacemarkImageUpload placemark />
 </section>
