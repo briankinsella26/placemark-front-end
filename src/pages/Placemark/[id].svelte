@@ -1,7 +1,7 @@
 <script>
   import {getContext, onMount} from 'svelte'
   import PlacemarkDetails from "../../components/PlacemarkDetails.svelte"
-  import PlacemarkImage from "../../components/PlacemarkImage.svelte"
+  import ImageCarousel from "../../components/ImageCarousel.svelte"
   import Menu from "../../components/Menu.svelte"
   import { user } from '../../stores.js'
   import MenuAdmin from '../../components/MenuAdmin.svelte'
@@ -18,7 +18,6 @@
     placemark = placemark.data;
     user.subscribe(user => {userScope = user.scope});
     placemarkImages = placemark.img
-    console.log(placemarkImages)
   });
 </script>
 
@@ -36,6 +35,6 @@
   <br>
   <br>
   <br>
-  <PlacemarkImage {placemark} {placemarkImages}/>
+  <ImageCarousel bind:placemarkImages imageHeight={200} deleteOption={false}/>
 </section>
 
