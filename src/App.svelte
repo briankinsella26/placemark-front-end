@@ -18,8 +18,10 @@
 
   import Charts from "./pages/Charts.svelte";
 
-  // setContext("PlacemarkService", new PlacemarkService("https://mysterious-harbor-74880.herokuapp.com"))
-  setContext("PlacemarkService", new PlacemarkService("http://localhost:3000"))
+  setContext("PlacemarkService", new PlacemarkService("https://mysterious-harbor-74880.herokuapp.com"))
+
+  // enable for localdev
+  // setContext("PlacemarkService", new PlacemarkService("http://localhost:3000"))
   const placemarkService = getContext("PlacemarkService")
 
   let routes = {
