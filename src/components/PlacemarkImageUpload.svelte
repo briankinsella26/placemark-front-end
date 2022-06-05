@@ -2,8 +2,7 @@
   import {getContext} from "svelte";
   import {push} from "svelte-spa-router";
   export let placemark;
-  import ImageCarousel from "../components/ImageCarousel.svelte"
-
+  
   const placemarkService = getContext("PlacemarkService")
   let errorMessage = "";
   let fileinput;
