@@ -7,7 +7,6 @@
   let errorMessage = "";
 
   async function update() {
-    console.log(placemark)
     let success = await placemarkService.updatePlacemark(placemark);
     if (success) {
       push("/dashboard/");
