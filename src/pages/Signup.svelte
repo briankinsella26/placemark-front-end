@@ -1,14 +1,23 @@
-<script lang="ts">
+<script>
   import { push } from "svelte-spa-router";
+  import {getContext} from 'svelte'
+
   import WelcomeMenu from "../components/WelcomeMenu.svelte"
+  const placemarkService = getContext("PlacemarkService");
 
   let firstName = "";
   let lastName = "";
   let email = ""
   let password = "";
+  let errorMessage = "";
 
   async function signup() {
-    push("/");
+    let success = placemarkService.signup(firstName, lastName, email, password);
+    if (success) {
+      push("/");
+    } else {
+      errorMessage = "Error creating new user";
+    }
   }
 </script>
 
@@ -40,3 +49,8 @@
       <button class="button is-link">Sign Up</button>
     </div>
 </form>
+{#if errorMessage}
+  <div class="section">
+    {errorMessage}
+  </div>
+{/if}
