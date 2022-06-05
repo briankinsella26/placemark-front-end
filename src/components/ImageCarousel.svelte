@@ -2,12 +2,14 @@
 
   export let placemarkImages, imageHeight = 150, deleteOption=false;
   import {getContext} from "svelte";
+  import {push} from "svelte-spa-router";
 
   const placemarkService = getContext("PlacemarkService")
 
   async function deleteImage(placemarkId, imageId) {
-    placemarkService.deleteImage(placemarkId, imageId);
-    placemarkImages = [... placemarkImages]
+    await placemarkService.deleteImage(placemarkId, imageId);
+    push(`/placemark/${placemarkId}`);
+    // placemarkImages = [... placemarkImages]
   }
 </script>
 

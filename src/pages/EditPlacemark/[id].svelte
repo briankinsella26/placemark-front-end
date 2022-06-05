@@ -27,10 +27,12 @@
   <Menu/>
 {/if}
 <section class="section">
-  <PlacemarkEditor {placemark}/>
-  <br>
-  <br>
-  <br>
-  <ImageCarousel bind:placemarkImages imageHeight={200} deleteOption={true}/>
-  <PlacemarkImageUpload placemark />
+  <div class="column has-text-centered">
+    <h1 class="title">Edit your placemark</h1>
+    <PlacemarkEditor {placemark}/>
+    <br>
+    <br>
+    <ImageCarousel bind:placemarkImages imageHeight={200} deleteOption={true}/>
+    <PlacemarkImageUpload bind:placemark />
+  </div>
 </section>
